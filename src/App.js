@@ -1,25 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react'; // importando o estado no useState
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(props) {  // todo componente recebe um parametro chamado props de propriedade, {} precisa para inserir codigo js dentro do codigo js, não pode ter dois ou mais jsx retornados, colocando-os dentro de uma div, fragment e uma tag sem nada <>
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <input name="Usuario" id="Usuario" className="usuarioInput"placeholder="Usuario"/>
+      <button type="button">Pesquisar</button>
+    </>
   );
 }
 
