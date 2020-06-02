@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Repositories from './repositories';
 
 ReactDOM.render( // Dentro do Index o REACT é responsavel por pegar o JavaScript e inserir na DOM ou na árvore de elementos// Dentro do Index o REACT é responsavel por pegar o JavaScript e inserir na DOM ou na árvore de elementos
     <App />, // passando a propriedade Title
