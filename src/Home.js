@@ -1,21 +1,27 @@
-import React, { useState } from 'react'; // importando o estado no useState
-import axios from 'axios'; // importando pacote se for o arquivo tem que por ./
+// importando o estado no useState
+import React, { useState } from 'react';
+// importando pacote se for o arquivo tem que por ./ axios
+import axios from 'axios';
+import * as S from './Home/styled';
 
-function App(props) {  // todo componente recebe um parametro chamado props de propriedade, {} precisa para inserir codigo js dentro do codigo js, não pode ter dois ou mais jsx retornados, colocando-os dentro de uma div, fragment e uma tag sem nada <>
-  const [ usuario, setUsuario ] = useState(''); // controle do componente
+// todo componente recebe um parametro chamado props de propriedade, {} precisa para inserir codigo js dentro do codigo js, não pode ter dois ou mais jsx retornados, colocando-os dentro de uma div, fragment e uma tag sem nada <>
+function App(props) {  
+// controle do componente
+const [ usuario, setUsuario ] = useState(''); 
   function handlePesquisa() {
-    axios.get(`https://api.github.com/users/${usuario}/repos`).then(response => console.log(response.data));
+    axios.get(`https://api.github.com/users/${usuario}/repos`).then(response => console.log(response.data)); // importanto os repositorios do git
   
   }
   
   return (
-    <>
+    <S.Container>
       <p> { usuario } </p>
 
-      <input className="usuarioInput"placeholder="Usuario" value={usuario} onChange = {e => setUsuario(e.target.value)}/>
+      <S.Input className="usuarioInput"placeholder="Usuario" value={usuario} onChange = {e => setUsuario(e.target.value)}/>
 
-      <button type="button" onClick = {handlePesquisa}>Pesquisar</button>
-    </>
+      <S.Button type="button" onClick = {handlePesquisa}>Pesquisar</S.Button>
+
+    </S.Container>
   );
 }
 
